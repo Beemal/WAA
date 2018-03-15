@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Lab2-names</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <a href="allNameServlet"><button>Show all Names</button></a>
+        <form action="addNameServlet" method="get">
+        Key=<input type="text" name="key" /> First Name= <input type="text" name="fname" /> Last Name=<input type="text" name="lname"/> 
+        <input type="submit" value="Add" />
+        </form>
+        <form action="removeNameServlet" method="get">
+        Key=<input type="text" name="key" /> <input type="submit" value="Remove" />
+        </form>
+    </body>
+</html>
