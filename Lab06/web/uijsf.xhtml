@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Lab06 - JSF UI Component</title>
+    </h:head>
+    <h:body>
+       <h:form>
+          
+           <h:panelGrid columns="2">
+           From: <h:selectOneMenu value="#{uIJSFManagedBean.from}">
+                <f:selectItem itemValue="Amsterdam" itemLabel="Amsterdam" />
+                <f:selectItem itemValue="Paris" itemLabel="Paris" />
+                <f:selectItem itemValue="Lissabon" itemLabel="Lissabon" />
+           </h:selectOneMenu>
+           To: <h:selectOneMenu value="#{uIJSFManagedBean.to}">
+                <f:selectItem itemValue="New York" itemLabel="New York" />
+                <f:selectItem itemValue="Boston" itemLabel="Boston" />
+                <f:selectItem itemValue="Chicago" itemLabel="Chicago" />
+           </h:selectOneMenu>
+           Departure Date:<h:inputText value="#{uIJSFManagedBean.depart_date}" />
+           Return Date:<h:inputText value="#{uIJSFManagedBean.return_date}" />
+           <h:selectOneRadio value="#{uIJSFManagedBean.trip}">
+                <f:selectItem itemValue="Round trip" itemLabel="Round trip" />
+                <f:selectItem itemValue="One way" itemLabel="One way" />
+           </h:selectOneRadio>
+           </h:panelGrid>
+            
+           <h:panelGroup layout="block">
+               <h:selectManyCheckbox value="#{uIJSFManagedBean.options}" layout="pageDirection">
+               <f:selectItem itemValue="first class" itemLabel="first class" />
+               <f:selectItem itemValue="excact these dates" itemLabel="excact these dates" />
+               <f:selectItem itemValue="no stopover trip" itemLabel="no stopover" />
+           </h:selectManyCheckbox>
+           </h:panelGroup>
+           
+           <h:commandButton value="Submit" action="#{uIJSFManagedBean.submit}" />
+       </h:form>
+    </h:body>
+</html>
+
