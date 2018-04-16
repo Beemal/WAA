@@ -71,7 +71,7 @@ public void init(){
             HttpSession session = request.getSession();
             Integer count = (Integer)session.getAttribute("count");
             if(count == null){
-                count = 0;
+                count = new Integer(0);
                 session.setAttribute("count", count);
             }
             List<Integer> history = (List<Integer>)session.getAttribute("history");
@@ -83,21 +83,26 @@ public void init(){
             if(guessNum > number){
                 out.println("Your Guess is Too high, try again");
                 count++;
+                session.setAttribute("count", count);
+                System.out.println("Less than -- "+count);
                 out.println("<br />Number of Guesses = "+count);
                 history.add(guessNum);
                 out.println("<br />History of guesses ="+history.toString());
                 
             }else if(guessNum < number){
                 out.println("Your Guess is Too Low, try again"); 
-                count++;
+                count = count+1;
+                session.setAttribute("count", count);
+                System.out.println("greater than -- "+count);
                 out.println("<br />Number of Guess = "+count);
                 history.add(guessNum);
                 out.println("<br />History of guesses ="+history.toString());
                 
             }else{
                 out.println("Congrats! You guessed the number correct<br />");
-                number = (int) (Math.random() * 10);
                 count = 0;
+                session.setAttribute("count", count);
+                System.out.println("equal to -- "+count);
                 history.clear();
             }
         }
