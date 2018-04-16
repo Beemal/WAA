@@ -22,10 +22,10 @@ public class EmployeeManagedBean {
     private Employee onlyEmployee;
 
     public EmployeeManagedBean() {
-        employeelist.add(new Employee(1432, "Frank Brown", "625-342-1221", 5032.45));
-        employeelist.add(new Employee(1321, "John Doe ", "625-232-1677", 7032.45));
-        employeelist.add(new Employee(1467, "Sam Zeren", "625-342-1221", 9032.45));
-        employeelist.add(new Employee(6775, "Harry Don", "625-355-6721", 8952.45));
+        employeelist.add(new Employee(1432, "Frank Brown", "625-541-1221", 7032.45));
+        employeelist.add(new Employee(4521, "John Doe ", "919-232-1677", 7032.45));
+        employeelist.add(new Employee(8867, "Marry Zeren", "515-342-1221", 10032.45));
+        employeelist.add(new Employee(8832, "Harry Johnson", "514-355-6721", 9952.45));
         onlyEmployee = employeelist.get(0);
     }
     public void setOnlyEmployee(Employee onlyEmployee) {
