@@ -8,7 +8,7 @@
     </h:head>
     <h:body>
         <f:view>
-            <h:panelGrid columns="2" border="1">
+            <h:panelGrid columns="2" border="1" >
                 <f:facet name="header"><h1 style="color: red;">Employees of Acme Inc.</h1></f:facet>
                 <h:form>
                 <h:dataTable border="1" value="#{employeeManagedBean.employeelist}" var="employee">
@@ -19,7 +19,7 @@
                 </h:dataTable>
                     <h:commandButton value="Show All" action="showAll.xhtml"/>
                 </h:form>
-                <h:dataTable border="1"  value="#{employeeManagedBean.onlyEmployee}" var="employee">
+                <h:dataTable border="1" class="styleTable" value="#{employeeManagedBean.onlyEmployee}" var="employee">
                     <h:column>
                        <f:facet name="header">ID</f:facet>
                        <h:outputText value="#{employee.id}" />
