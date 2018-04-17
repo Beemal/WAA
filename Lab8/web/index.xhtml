@@ -9,12 +9,15 @@
     <h:body>
         <h:form>
             Date <h:inputText id="date" value="#{dataTimeJSFManagedBean.date}" label="Date" required="true">
-                        <f:convertDateTime pattern="d/M/yy" />
-		 </h:inputText>			
-		 <h:message for="date" style="color:red" /> <br /><br />
-                 
-     Temperature <h:inputText id="temperature" value="#{dataTimeJSFManagedBean.temperature}" /><br />
-                 <h:commandButton value="Submit" action="#{dataTimeJSFManagedBean.convert}" />
+                <f:convertDateTime pattern="d/M/yy" />
+            </h:inputText>			
+            <h:message for="date" style="color:red" /> <br /><br />
+
+            Temperature <h:inputText id="temperature" value="#{dataTimeJSFManagedBean.temperature}">
+                <f:converter converterId="TempConverter"></f:converter>
+            </h:inputText>
+            <br />
+            <h:commandButton value="Submit" action="result.xhtml" />
         </h:form>
     </h:body>
 </html>

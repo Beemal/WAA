@@ -9,7 +9,6 @@ import java.util.Date;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
-
 /**
  *
  * @author bimal.parajuli
@@ -35,15 +34,5 @@ public class DataTimeJSFManagedBean {
 
     public void setTemperature(String temperature) {
         this.temperature = temperature;
-    }
-    public String convert(){
-        if(temperature.startsWith("C")){
-            temperature = "The temperature was "+temperature.substring(1)+" Celcius";
-        }else if(temperature.startsWith("F")){
-            temperature = "The temperature was "+temperature.substring(1)+" Fahrenheit";
-        }else{
-            temperature ="Wrong Input for temperature";
-        }
-        return "result";
     }
 }

@@ -10,9 +10,11 @@
         On <h:outputText value="#{dataTimeJSFManagedBean.date}">
             <f:convertDateTime dateStyle="full" type="date"></f:convertDateTime>
         </h:outputText>
-        
+
         <br />
-        <h:outputText value="#{dataTimeJSFManagedBean.temperature}" />
+        <h:outputText value="#{dataTimeJSFManagedBean.temperature}">
+            <f:converter converterId="TempConverter"></f:converter>
+        </h:outputText>
     </h:body>
 </html>
 
