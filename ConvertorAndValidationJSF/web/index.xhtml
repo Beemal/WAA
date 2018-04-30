@@ -14,6 +14,22 @@
         </h:inputText>
         <h:message for="amount" styleClass="errorMessage"/> 
         </h:form>
+        <hr />
+        
+        <h1> JSF value Change Listener example </h1>
+        <h:form>
+            <h:panelGrid columns="2">
+                Selected Country: 
+                <h:inputText id="country" value="#{countryBean.localeCode}" size="20" />
+                
+                Select a country:
+                <h:selectOneMenu value="#{countryBean.localeCode}" onchange="submit()"
+                                 valueChangeListener="#{countryBean.countryLocaleCodeChanged}">
+                    <f:selectItems value="#{countryBean.countries}" />
+                </h:selectOneMenu>
+            </h:panelGrid>
+        </h:form>
+        
     </h:body>
 </html>
 

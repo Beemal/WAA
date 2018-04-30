@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Lab9-Event Handling</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            Airline <h:selectOneMenu value="#{airlineManagedBean.selectedAirline}" onchange="submit()" immediate="true"
+                                     valueChangeListener="#{airlineManagedBean.airlineChanged}">
+                <f:selectItem itemLabel="All" />
+                <f:selectItems value="#{airlineManagedBean.airlines}" var="air" itemLabel="#{air.airline}"
+                               itemValue="#{air.airline}"/>
+            </h:selectOneMenu> 
+        </h:form>
+        <br /><br /><br />
+        <h:dataTable border="1" value="#{airlineManagedBean.airlines}" var="airline">
+            <h:column>
+                #{airline.from}
+            </h:column>
+            <h:column>
+                #{airline.to}
+            </h:column>
+            <h:column>
+                #{airline.date}
+            </h:column>
+            <h:column>
+                #{airline.airline}
+            </h:column>
+            <h:column>
+                #{airline.price}
+            </h:column>
+        </h:dataTable>
+    </h:body>
+</html>
+
