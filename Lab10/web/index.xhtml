@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Lab10 - Custom Component</title>
+    </h:head>
+    <h:body>
+        Please enter your Credit Card Information <br /><br />
+        <h:form>
+            <h:panelGrid columns="3">
+                Months <p:spinner value="#{creditcardJSFManagedBean.month}"
+                                  id="monthSpinner" min="1" max="12" size="3"/>
+                <h:message for="monthSpinner"/>
+                Year <p:spinner value="#{creditcardJSFManagedBean.year}"
+                                  id="yearSpinner" min="1900" max="2100" size="5"/>
+                <h:message for="yearSpinner"/>
+                <h:commandButton value="Next" action="result"/>
+            </h:panelGrid>
+    
+        </h:form>
+    </h:body>
+</html>
+
